@@ -1,51 +1,56 @@
 package se.kicksort.myfirstapp.threading;
 
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-
-import java.net.URL;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
 import se.kicksort.myfirstapp.R;
 
 public class AsyncTaskActivity extends AppCompatActivity {
 
+    private TextView mTextView;
+    private TextView mProgressText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_async_task);
+        mTextView = (TextView) findViewById(R.id.textView);
+        mProgressText = (TextView) findViewById(R.id.progressText);
     }
 
-    private class DownloadFilesTask extends AsyncTask<URL, Integer, Long> {
-        protected Long doInBackground(URL... urls) {
+    public void onResume() {
+        super.onResume();
+        DownloadFilesTask task = new DownloadFilesTask();
+        task.execute("http://www.kicksort.se");
+    }
+
+
+    private class DownloadFilesTask extends AsyncTask<String, Integer, String> {
+
+        protected String doInBackground(String... urls) {
+            String response = "";
             int count = urls.length;
-            long totalSize = 0;
+
             for (int i = 0; i < count; i++) {
-                totalSize += Downloader.downloadFile(urls[i]);
+                response += Downloader.downloadData(urls[i]);
                 publishProgress((int) ((i / (float) count) * 100));
-                // Escape early if cancel() is called
-                if (isCancelled()) break;
+                if (isCancelled()) {
+                    break;
+                }
             }
-            return totalSize;
+            return response;
         }
 
-        protected void onProgressUpdate(Integer... progress) {
-            setProgressPercent(progress[0]);
+        @Override protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+            mProgressText.setText("Downloaded " + values);
         }
 
-        protected void onPostExecute(Long result) {
-            Log.d("AsyncTask", "Downloading complete");
-        }
-    }
-
-    void setProgressPercent(int progress){
-
-    }
-
-    private static class Downloader {
-        static long downloadFile(URL url) {
-            return 0;
+        protected void onPostExecute(String result) {
+            mTextView.setText(result);
         }
     }
+
 }

@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 
@@ -26,6 +27,8 @@ public class DialogActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final EditText editText = new EditText(view.getContext());
+                editText.setGravity(Gravity.CENTER_HORIZONTAL);
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
                 builder.setTitle("Fancy title");
                 builder.setMessage("Fancy message");
@@ -37,6 +40,7 @@ public class DialogActivity extends AppCompatActivity {
                                 .setAction("Action", null).show();
                     }
                 });
+
                 builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override public void onClick(DialogInterface dialog, int which) {
                         Snackbar.make(mToolbar, "No...", Snackbar.LENGTH_LONG)

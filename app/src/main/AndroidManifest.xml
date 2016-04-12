@@ -44,11 +44,7 @@
         </activity>
         <activity android:name=".database.DatbaseActivity">
         </activity>
-        <activity
-            android:name=".database.BasicActivty"
-            android:label="@string/title_activity_basic_activty"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+
         <activity
             android:name=".fragment.ItemListActivity"
             android:label="@string/title_item_list"
@@ -70,6 +66,11 @@
             android:label="@string/title_activity_dialog"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
+        <service
+            android:name=".threading.MyIntentService"
+            android:exported="false">
+        </service>
     </application>
 
 </manifest>
