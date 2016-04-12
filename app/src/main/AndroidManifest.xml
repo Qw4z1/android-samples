@@ -65,6 +65,11 @@
         </activity>
         <activity android:name=".threading.AsyncTaskActivity">
         </activity>
+        <activity
+            android:name=".DialogActivity"
+            android:label="@string/title_activity_dialog"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

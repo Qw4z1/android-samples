@@ -22,25 +22,6 @@ public class DatbaseActivity extends AppCompatActivity {
         mDbHelper = new FeedReaderDbHelper(this);
 
     }
-public void onClick(View v) {
-    new Thread(new Runnable() {
-        public void run() {
-            final Bitmap bitmap =
-                    loadImageFromNetwork("http://example.com/image.png");
-            mImageView.post(new Runnable() {
-                public void run() {
-                    mImageView.setImageBitmap(bitmap);
-                }
-            });
-        }
-    }).start();
-}
-
-
-    private ImageView mImageView;
-    public Bitmap loadImageFromNetwork(String string){
-        return null;
-    }
 
     private void insertData(int id, String title, String subtitle) {
         // Gets the data repository in write mode
