@@ -44,7 +44,6 @@
         </activity>
         <activity android:name=".database.DatbaseActivity">
         </activity>
-
         <activity
             android:name=".fragment.ItemListActivity"
             android:label="@string/title_item_list"
@@ -71,6 +70,12 @@
             android:name=".threading.MyIntentService"
             android:exported="false">
         </service>
+
+        <activity
+            android:name=".threading.ServiceActivity"
+            android:label="@string/title_activity_service"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

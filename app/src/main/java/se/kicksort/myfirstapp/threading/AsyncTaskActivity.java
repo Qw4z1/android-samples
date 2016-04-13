@@ -29,7 +29,7 @@ public class AsyncTaskActivity extends AppCompatActivity {
 
     private class DownloadFilesTask extends AsyncTask<String, Integer, String> {
 
-        protected String doInBackground(String... urls) {
+        @Override protected String doInBackground(String... urls) {
             String response = "";
             int count = urls.length;
 
@@ -44,11 +44,10 @@ public class AsyncTaskActivity extends AppCompatActivity {
         }
 
         @Override protected void onProgressUpdate(Integer... values) {
-            super.onProgressUpdate(values);
             mProgressText.setText("Downloaded " + values);
         }
 
-        protected void onPostExecute(String result) {
+        @Override protected void onPostExecute(String result) {
             mTextView.setText(result);
         }
     }
