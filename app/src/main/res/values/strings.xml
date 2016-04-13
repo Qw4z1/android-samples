@@ -9,4 +9,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_dialog">DialogActivity</string>
     <string name="title_activity_service">ServiceActivity</string>
+    <string name="xml_text_title">This is a Custom view</string>
+    <string name="xml_text_subtitle">It was created by inflating an xml layout with a merge tag</string>
 </resources>
