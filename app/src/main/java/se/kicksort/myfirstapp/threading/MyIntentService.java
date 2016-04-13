@@ -4,6 +4,7 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.ResultReceiver;
 
 /**
  * An {@link IntentService} subclass for handling asynchronous task requests in
@@ -43,7 +44,7 @@ public class MyIntentService extends IntentService {
             if (ACTION_DOWNLOAD.equals(action)) {
                 final String param1 = intent.getStringExtra(EXTRA_URL);
                 String result = Downloader.downloadData(param1);
-                ServiceActivity.MyReceiver receiver = intent.getParcelableExtra(EXTRA_RECEIVER);
+                ResultReceiver receiver = intent.getParcelableExtra(EXTRA_RECEIVER);
                 Bundle bundle = new Bundle();
                 bundle.putString("data", result);
                 receiver.send(100, bundle);
