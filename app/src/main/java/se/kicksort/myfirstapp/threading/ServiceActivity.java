@@ -29,6 +29,7 @@ public class ServiceActivity extends AppCompatActivity {
         mTextView = (TextView) findViewById(R.id.textView);
         Button button = (Button) findViewById(R.id.button);
 
+        assert button != null;
         button.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 MyIntentService.startActionDownload(getApplicationContext(),

@@ -11,18 +11,17 @@ import se.kicksort.myfirstapp.R;
 
 public class RecyclerViewActivity extends AppCompatActivity {
 
-    private RecyclerView mRecyclerView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("RecyclerView");
         setContentView(R.layout.activity_recycler_view);
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        mRecyclerView.setHasFixedSize(true);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        assert recyclerView != null;
+        recyclerView.setHasFixedSize(true);
         GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        mRecyclerView.setLayoutManager(layoutManager);
-        mRecyclerView.setAdapter(new RecyclerViewAdapter(DummyContent.TITLES));
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(new RecyclerViewAdapter(DummyContent.TITLES));
     }
 }
