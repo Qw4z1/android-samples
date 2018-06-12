@@ -10,11 +10,11 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="se.kicksort.myfirstapp.customviews.CustomViewsActivity">
-    <se.kicksort.myfirstapp.customviews.CustomViewXml
+    tools:context=".customviews.CustomViewsActivity">
+    <se.devies.myfirstapp.customviews.CustomViewXml
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-    <se.kicksort.myfirstapp.customviews.MyView
+    <se.devies.myfirstapp.customviews.MyView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:exampleColor="#333333"

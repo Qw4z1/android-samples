@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="se.kicksort.myfirstapp">
+          package="se.devies.myfirstapp">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -12,9 +12,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
@@ -24,45 +24,55 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="se.kicksort.myfirstapp.MainActivity" />
+                android:value=".MainActivity"/>
         </activity>
         <activity
             android:name=".LayoutExampleActivity"
             android:label="Layout Example">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
-        <activity android:name=".SharedPreferencesActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".listview.ListViewActivity" />
-        <activity android:name=".recyclerview.RecyclerViewActivity" />
-        <activity android:name=".database.DatbaseActivity" />
-        <activity android:name=".threading.AsyncTaskActivity" />
+        <activity android:name=".SharedPreferencesActivity"/>
+        <activity android:name=".listview.ListViewActivity"/>
+        <activity android:name=".recyclerview.RecyclerViewActivity"/>
+        <activity android:name=".database.DatabaseActivity"/>
+        <activity android:name=".threading.AsyncTaskActivity"/>
         <activity
             android:name=".DialogActivity"
             android:label="@string/title_activity_dialog"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"/>
 
         <service
             android:name=".threading.MyIntentService"
-            android:exported="false" />
+            android:exported="false"/>
 
         <activity
             android:name=".threading.ServiceActivity"
             android:label="@string/title_activity_service"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".customviews.CustomViewsActivity" />
-        <activity android:name=".notifications.NotificaitionActivity" />
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".customviews.CustomViewsActivity"/>
+        <activity
+            android:name=".notifications.NotificationActivity"
+            android:exported="true"/>
         <activity
             android:name=".notifications.ResultActivity"
-            android:parentActivityName=".notifications.NotificaitionActivity" />
-        <activity android:name=".fragment.FragmentActivity"></activity>
+            android:exported="true"
+            android:parentActivityName=".notifications.NotificationActivity"/>
+        <activity android:name=".fragment.FragmentActivity"/>
+        <activity android:name=".BuildConfigActivity">
+        </activity>
+        <activity android:name=".room.RoomActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".room.NoteActivity">
+        </activity>
+        <activity android:name=".networking.NetworkingActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>
